@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+::placeholder {
+    color: #392467;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+}
+
+.container {
+    width: 10rem;
+
+}
+
+.login {
+    display: flex;
+    gap: 30px;
+    height: 30rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.left {
+    background-color: #392467;
+    width: 40rem;
+    color: white;
+}
+
+.left h1 {
+    margin: 20px;
+    text-align: center;
+
+}
+
+.left h3 {
+    text-align: center;
+
+}
+
+.right {
+    overflow-x: hidden;
+    width: 25rem;
+}
+
+.right h4 {
+    margin: 20px;
+    color: #392467;
+    font-size: larger;
+}
+
+.inputs input {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(20%, -30%);
+
+}
+
+.submit {
+    text-align: center;
+    background-color: #392467;
+    border: none;
+    padding: 10px 150px;
+    color: white;
+    position: relative;
+    left: 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.img {
+    position: relative;
+    bottom: 37rem;
+    width: 300px;
+    left: 10rem;
+}
+
+input {
+    padding: 7px 20px;
+    outline: none;
+    margin: 30px;
+}
+
+.input {
+    width: 25rem;
+    border: 1px solid white;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.signup {
+    position: relative;
+    left: 9rem;
+}
+
+a {
+    text-decoration: none;
+    color: #392467;
+}
+.blob2{
+    display: flex;
+    justify-content: end;
+}
+.svg{
+    height: 130px;
+    width: 30rem;
+    background-image: radial-gradient(#392467 1.5px, transparent 1px);
+    background-size: 18px 18px;
+    background-color: #ffffff;
+}
+.blob1{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+ }
