@@ -1,4 +1,10 @@
-
+<?php
+    session_start();
+    if (isset($_POST['submit'])){
+        $_SESSION['NickName'] = $_POST['NickName'];
+        header( 'location: ./question.php');
+    }
+?>
 <!doctype html>
 <html lang="en">
 <head>

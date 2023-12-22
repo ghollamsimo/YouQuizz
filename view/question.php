@@ -1,3 +1,12 @@
+<?php
+require_once '../model/questionModel.php';
+
+$questionClass = new Quiz();
+$questions = $questionClass->SelectQuestion();
+?>
+
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,29 +18,63 @@
     <title>Document</title>
 </head>
 <body>
+<!--<h1>--><?php //session_start();
+//        echo $_SESSION['NickName'];
+//    ?><!--</h1>-->
 <div class="blob2">
-    <h1>Timer : 20</h1>
+    <h1>Score : 111</h1>
+    <div class="container">
+        <div class="progress">
+            <div class="percent"></div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <ul id="progress-bar" class="progressbar">
+                        <li class="active">Question 1</li>
+                        <li>Question 2</li>
+                        <li>Question 3</li>
+                        <li>Question 4</li>
+                        <li>Question 5</li>
+                        <li>Question 6</li>
+                        <li>Question 7</li>
+                        <li>Question 8</li>
+                        <li>Question 9</li>
+                        <li>Question 10</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="svg"></div>
 </div>
 <div class="question-section">
+
     <div class="question">
-        <h1>Why is AWS more economical than traditional data centers for applications with varying compute
-            workloads?
+        <?php
+        foreach ($questions as $qestion) :
+        ?>
+        <h1>
+            <?php echo $qestion['Question']; ?>
         </h1>
+        <?php endforeach; ?>
     </div>
+
     <div class="Reponse">
-        <button  type="submit" class="btn" name="btnone">Reponse 1</button>
-        <button type="submit" class="btn" name="btn">Reponse 2</button>
-        <button class="btn" name="btnone">Reponse 3</button>
-        <button  type="submit" class="btn" name="btnone">Reponse 4</button>
+        <button type="submit" id="button1" class="btn" name="btnone" onclick="changeBackgroundColor('button1')">Reponse 1</button>
+        <button type="submit" id="button2" class="btn" name="btnone" onclick="changeBackgroundColor('button2')">Reponse 2</button>
+        <button type="submit" id="button3" class="btn" name="btnone" onclick="changeBackgroundColor('button3')">Reponse 3</button>
+        <button type="submit" id="button4" class="btn" name="btnone" onclick="changeBackgroundColor('button4')">Reponse 4</button>
     </div>
 </div>
 <div class="blob1">
     <div class="svg"></div>
 </div>
 
-<div class="score">
-    <h2>1517988</h2>
+<div class="nextbtn">
+    <button id="Next" >Next</button>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>

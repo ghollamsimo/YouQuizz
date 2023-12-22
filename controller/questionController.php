@@ -1,6 +1,6 @@
 <?php
 require_once '../model/questionModel.php';
-$question = new Person();
+$question = new Quiz();
 function PersonAction(){
-    SelectQuestion();
+
 }

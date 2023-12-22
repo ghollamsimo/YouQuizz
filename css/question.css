@@ -22,17 +22,17 @@
 
 }
 .svg{
-    height: 150px;
-    width: 30rem;
+    height: 160px;
+    width: 9rem;
     background-image: radial-gradient(#392467 1.5px, transparent 1px);
     background-size: 18px 18px;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0);
 }
 .question-section{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -60%);
+    transform: translate(-50%, -55%);
 
 }
 
@@ -65,7 +65,7 @@
     font-weight: bold;
     border: 2px solid #392467;
     transition: 0.3s;
-    box-shadow: 5px 5px 0px 0px #392467;
+    box-shadow: 10px 10px 0px 0px #392467;
     background-color: #ffffff;
 }
 .Reponse button:hover{
@@ -73,22 +73,89 @@
     color: #fff;
     background-color: #392467;
 }
+.Reponse button:active{
+    background-color: #392467;
+
+}
 .blob1{
     position: absolute;
     left: 0;
     bottom: 0;
 
 }
-.score{
+
+.nextbtn button{
+    cursor: pointer;
+    border: 0;
+    text-align: center;
     position: absolute;
     left: 89%;
     width: 10rem;
     bottom: 0;
     background: #5D3587;
-    box-shadow: -5px -5px 0px 0px #392467;
+    box-shadow: -10px -10px 0px 0px #392467;
     color: white;
     padding: 1rem 30px;
     border-radius: 40px 0px 0px 40px;
+}
+.progressbar {
+    display: flex;
+    width: 100%;
+    margin: 50px 0 50px 0;
+    counter-reset: step;
+}
+.progressbar li {
+    list-style-type: none;
+    width: 7rem;
+    float: left;
+    font-size: 12px;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    color: #7d7d7d;
+}
+.progressbar li:before {
+    width: 15px;
+    height: 15px;
+    content: '';
+    line-height: 30px;
+    border: 2px solid #7d7d7d;
+    background-color: #7d7d7d;
+    display: block;
+    text-align: center;
+    margin: 0 auto 10px auto;
+    border-radius: 50%;
+    transition: all .8s;
+}
+.progressbar li:after {
+    width: 100%;
+    height: 2px;
+    content: '';
+    position: absolute;
+    background-color: #7d7d7d;
+    top: 7px;
+    left: -50%;
+    z-index: -1;
+    transition: all .8s;
+}
+.progressbar li:first-child:after {
+    content: none;
+}
+.progressbar li.active:before {
+    border-color: #392467;
+    background-color: #392467;
+    transition: all .8s;
+}
+.progressbar li.active:after {
+    background-color: #5D3587;
+    transition: all .8s;
+}
+
+.btn {
+    background-color: #55b776;
+    margin: 5px;
+    width: 75px;
+    color: white;
 }
 @media only screen and (max-width: 600px){
     .question-section{
