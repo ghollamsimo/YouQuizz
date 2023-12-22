@@ -20,4 +20,9 @@ class DatabaseConection{
         return $this->conn;
     }
 
+    public function prepare($sql): false|PDOStatement
+    {
+        return $this->conn->prepare($sql);
+    }
+
 }

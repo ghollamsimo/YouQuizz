@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+}
+.blob2{
+    display: flex;
+    justify-content: space-between;
+}
+.blob2 h1{
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 10px 30px;
+    border-radius: 10px;
+    margin: 40px;
+    background: #5D3587;
+    height: fit-content;
+    box-shadow: 10px 10px 0px 0px #392467;
+
+}
+.svg{
+    height: 150px;
+    width: 30rem;
+    background-image: radial-gradient(#392467 1.5px, transparent 1px);
+    background-size: 18px 18px;
+    background-color: #ffffff;
+}
+.question-section{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+
+}
+
+.question h1{
+    margin: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    background: #5D3587;
+    box-shadow: 10px 10px 0px 0px #392467;
+    border-radius: 5px;
+    color: #ffffff;
+}
+.Reponse{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.Reponse button{
+    cursor: pointer;
+    margin: 2rem;
+    text-decoration: none;
+    color: #392467;
+    font-size: 18px;
+    border-radius: 0px;
+    width: 40rem;
+    height: 70px;
+    font-weight: bold;
+    border: 2px solid #392467;
+    transition: 0.3s;
+    box-shadow: 5px 5px 0px 0px #392467;
+    background-color: #ffffff;
+}
+.Reponse button:hover{
+    box-shadow: 0 0 #392467;
+    color: #fff;
+    background-color: #392467;
+}
+.blob1{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+}
+.score{
+    position: absolute;
+    left: 89%;
+    width: 10rem;
+    bottom: 0;
+    background: #5D3587;
+    box-shadow: -5px -5px 0px 0px #392467;
+    color: white;
+    padding: 1rem 30px;
+    border-radius: 40px 0px 0px 40px;
+}
+@media only screen and (max-width: 600px){
+    .question-section{
+        top: 0%;
+        left: 0%;
+        transform: translate(-0%, -0%);
+    }
+    .question{
+        font-size: 16px;
+
+    }
+    .Reponse{
+        grid-template-columns: 1fr;
+    }
+    .Reponse button{
+        width: 25rem;
+    }
+}
