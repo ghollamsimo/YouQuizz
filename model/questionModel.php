@@ -1,17 +1,17 @@
 <?php
-
-require_once '../config/connect.php';
-class Quiz{
-    private $db;
+require_once 'mainModel.php';
+class Quiz extends Crud {
 
     public function __construct(){
-        return $this->db = new DatabaseConection();
+        parent::__construct(); // Call the constructor of the parent class
+        $this->tablename = 'question';
+//        $this->tablename = "answers";
     }
     public function SelectQuestion(){
-        $requet = $this->db->prepare('SELECT * FROM question ');
-        $requet->execute();
-
-        return   $requet->fetchAll(PDO::FETCH_ASSOC);
+      return $this->FetchQuestion();
     }
+//    public function SelectAnswers(){
+//        return $this->FetchAnswers();
+//    }
 
 }

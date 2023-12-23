@@ -60,12 +60,16 @@ $questions = $questionClass->SelectQuestion();
         <?php endforeach; ?>
     </div>
 
+<!--    <form method="post">-->
     <div class="Reponse">
         <button type="submit" id="button1" class="btn" name="btnone" onclick="changeBackgroundColor('button1')">Reponse 1</button>
         <button type="submit" id="button2" class="btn" name="btnone" onclick="changeBackgroundColor('button2')">Reponse 2</button>
         <button type="submit" id="button3" class="btn" name="btnone" onclick="changeBackgroundColor('button3')">Reponse 3</button>
         <button type="submit" id="button4" class="btn" name="btnone" onclick="changeBackgroundColor('button4')">Reponse 4</button>
+
     </div>
+<!--    </form>-->
+
 </div>
 <div class="blob1">
     <div class="svg"></div>
@@ -75,6 +79,7 @@ $questions = $questionClass->SelectQuestion();
     <button id="Next" >Next</button>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="../js/question.js"></script>
 <script src="../js/main.js"></script>
 </body>
 </html>
