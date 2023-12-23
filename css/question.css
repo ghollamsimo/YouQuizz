@@ -45,7 +45,9 @@
     transform: translate(-50%, -55%);
 
 }
-
+.question{
+    background: url("../img/backgoround-patreen.png");
+}
 .question h1{
     margin: 70px;
     display: flex;
@@ -58,6 +60,7 @@
     box-shadow: 10px 10px 0px 0px #392467;
     border-radius: 5px;
     color: #ffffff;
+
 }
 .Reponse{
     display: grid;
