@@ -3,7 +3,7 @@ require_once 'mainModel.php';
 class Quiz extends Crud {
 
     public function __construct(){
-        parent::__construct(); // Call the constructor of the parent class
+        parent::__construct();
         $this->tablename = 'question';
 //        $this->tablename = "answers";
     }

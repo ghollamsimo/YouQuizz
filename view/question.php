@@ -1,6 +1,6 @@
 <?php
 require_once '../model/questionModel.php';
-
+session_start();
 $questionClass = new Quiz();
 $questions = $questionClass->SelectQuestion();
 ?>
@@ -18,11 +18,11 @@ $questions = $questionClass->SelectQuestion();
     <title>Document</title>
 </head>
 <body>
-<!--<h1>--><?php //session_start();
+<!--<h1>--><?php
 //        echo $_SESSION['NickName'];
 //    ?><!--</h1>-->
 <div class="blob2">
-    <h1>Score : 111</h1>
+    <h1>Score : 0</h1>
     <div class="container">
         <div class="progress">
             <div class="percent"></div>
