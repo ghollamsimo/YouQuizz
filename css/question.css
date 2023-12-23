@@ -21,9 +21,19 @@
     box-shadow: 10px 10px 0px 0px #392467;
 
 }
+.time{
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 10px 30px;
+    border-radius: 10px;
+    margin: 40px;
+    background: #5D3587;
+    height: fit-content;
+    box-shadow: 10px 10px 0px 0px #392467;
+}
 .svg{
     height: 160px;
-    width: 9rem;
+    width: 20rem;
     background-image: radial-gradient(#392467 1.5px, transparent 1px);
     background-size: 18px 18px;
     background-color: rgba(255, 255, 255, 0);

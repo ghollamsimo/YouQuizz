@@ -1,1 +1,0 @@
-const Btn = document.querySelectorAll('.b')

@@ -16,3 +16,4 @@ const progressBar = {
 $("#Next").on('click', function () {
     progressBar.Next();
 });
+

@@ -46,7 +46,11 @@ $questions = $questionClass->SelectQuestion();
             </div>
         </div>
     </div>
-    <div class="svg"></div>
+    <div class="time">
+        <div id="timer">
+            20
+        </div>
+        <div>
 </div>
 <div class="question-section">
 
@@ -81,5 +85,24 @@ $questions = $questionClass->SelectQuestion();
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="../js/question.js"></script>
 <script src="../js/main.js"></script>
+
+
+            <script >
+                var timer;
+                var ele = document.getElementById('timer');
+
+                (function () {
+                    var sec = 20;
+                    timer = setInterval(() => {
+                        ele.innerHTML = sec;
+                        sec--;
+
+                        if (sec < 0) {
+                            clearInterval(timer);
+                        }
+                    }, 1000);
+                })();
+
+            </script>
 </body>
 </html>
