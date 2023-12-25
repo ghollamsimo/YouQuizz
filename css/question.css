@@ -98,6 +98,7 @@
 }
 
 .nextbtn button{
+    transition: 0.3s;
     cursor: pointer;
     border: 0;
     text-align: center;
@@ -105,17 +106,23 @@
     left: 89%;
     width: 10rem;
     bottom: 0;
-    background: #5D3587;
+    background: #ffffff;
     box-shadow: -10px -10px 0px 0px #392467;
-    color: white;
+    border: 2px solid #392467;
+    color: #392467;
     padding: 1rem 30px;
     border-radius: 40px 0px 0px 40px;
+}
+.nextbtn button:hover{
+    box-shadow: 0 0 #392467;
+    color: #fff;
+    background-color: #392467;
 }
 .progressbar {
     display: flex;
     width: 100%;
     margin: 50px 0 50px 0;
-    counter-reset: step;
+    counter-reset: step ;
 }
 .progressbar li {
     list-style-type: none;
