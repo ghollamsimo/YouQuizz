@@ -2,6 +2,7 @@ function changeBackgroundColor(buttonId) {
     var clickedButton = document.getElementById(buttonId);
     clickedButton.style.backgroundColor = "#392467";
     clickedButton.style.color = 'white';
+
 }
 
 var timer;

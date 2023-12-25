@@ -13,6 +13,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/style.css?v=<?php echo time(); ?>">
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <title>Quizz Game</title>
 </head>
 <body>
@@ -23,7 +25,7 @@
 <div class="container">
     <div class="login">
         <div class="left">
-            <h1 class="text-lg">Welcome To YouQuizz</h1>
+            <h1 class="text-3xl">Welcome To YouQuizz</h1>
             <h3>Dive into the World of YouQuizz!</h3>
             <div class="blob">
                 <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -36,13 +38,14 @@
         </div>
         <div class="right">
             <h4><span><i class='bx bx-leaf'></i></span>YouQuizz</h4>
-            <h1>You can Add Nick Name In YouQuizz !</h1>
+            <h1 class="text-3xl">You can Add Nick Name In YouQuizz !</h1>
             <div class="inputs">
+                <form method="post">
                 <form action="" method="post">
                     <input class="input" type="text" name="NickName" placeholder="Enter Your Name "
                            id="exampleInputPassword1">
-                    <input type="submit" name="submit" value="Valide" class="submit">
-                </form>
+                    <input data-modal-target="popup-modal" data-modal-toggle="popup-modal"  type="button"  value="Valide" class="submit bg-[#392467] my-10">
+
             </div>
 
         </div>
@@ -53,6 +56,33 @@
     <div class="svg"></div>
 </div>
 
+
+<div id="popup-modal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-[100%] md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-[40rem] max-h-full">
+        <div class="relative bg-white rounded-lg shadow">
+<!--            <button type="button" class="absolute top-3 end-2.5 text-gray-400 bg-transparent  hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center " data-modal-hide="popup-modal">-->
+<!--                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">-->
+<!--                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>-->
+<!--                </svg>-->
+<!--                <span class="sr-only">Close modal</span>-->
+<!--            </button>-->
+            <div class="p-4 md:p-5 text-center">
+                <h3 class="mb-5 text-2xl font-bold text-[#392467]">YouQuiz Game Chart</h3>
+                <hr>
+                <p class="text-[#5D3587] m-5 text-lg">Customize this chart based on the specific features and goals of your "YouQuiz" project. Regularly monitoring these engagement metrics will help you make informed decisions to enhance user experience and keep your audience engaged.</p>
+                <button data-modal-hide="popup-modal" type="button" class="button text-center me-2">
+                    Exit Game
+                </button>
+                <button type="submit" name="submit" class="button">Continue</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!--<script src="../js/question.js"></script>-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+
 </body>
 </html>

@@ -24,9 +24,9 @@ class Question extends Crud {
 //        $this->tablename = "answers";
     }
     public function fetchQuestions(){
-      $row = $this->fetchRandom();
-      $this->questionId = $row["Idquestion"];
-      $this->questionText = $row["Question"];
+        $row = $this->fetchRandom();
+        $this->questionId = $row["Idquestion"];
+        $this->questionText = $row["Question"];
     }
     public function fetchAnswers(){
         $row = $this->FetchAnswersMain($this->questionId);

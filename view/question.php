@@ -68,7 +68,7 @@ $result = $questionControllerObject->prepareObject();
 
     </div>
 
-<!--    <form method="post">-->
+    <!--    <form method="post">-->
     <div class="Reponse">
         <button type="submit" id="button1" class="btn" name="btnone" onclick="changeBackgroundColor('button1')"><?=$result["answersArray"][0]["Answer"] ?></button>
         <button type="submit" id="button2" class="btn" name="btnone" onclick="changeBackgroundColor('button2')"><?=$result["answersArray"][1]["Answer"] ?></button>
@@ -76,7 +76,7 @@ $result = $questionControllerObject->prepareObject();
         <button type="submit" id="button4" class="btn" name="btnone" onclick="changeBackgroundColor('button4')"><?=$result["answersArray"][3]["Answer"] ?></button>
 
     </div>
-<!--    </form>-->
+    <!--    </form>-->
 
 </div>
 <div class="blob1">
@@ -93,8 +93,8 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
 
 <script src="../js/question.js"></script>
 <script src="../js/main.js"></script>
-        <script >
+<script >
 
-        </script>
+</script>
 </body>
 </html>
