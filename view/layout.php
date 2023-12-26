@@ -67,7 +67,7 @@
 <!--                <span class="sr-only">Close modal</span>-->
 <!--            </button>-->
             <div class="p-4 md:p-5 text-center">
-                <h3 class="mb-5 text-2xl font-bold text-[#392467]">YouQuiz Game Chart</h3>
+                <h3 class="mb-5 text-2xl font-bold text-[#392467]">YouQuiz Game Rules</h3>
                 <hr>
                 <p class="text-[#5D3587] m-5 text-lg">Customize this chart based on the specific features and goals of your "YouQuiz" project. Regularly monitoring these engagement metrics will help you make informed decisions to enhance user experience and keep your audience engaged.</p>
                 <button data-modal-hide="popup-modal" type="button" class="button text-center me-2">

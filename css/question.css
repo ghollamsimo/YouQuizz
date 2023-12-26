@@ -66,6 +66,7 @@
     display: grid;
     grid-template-columns: repeat(2,1fr);
 }
+
 .Reponse button{
     cursor: pointer;
     margin: 2rem;
@@ -88,8 +89,9 @@
 }
 .Reponse button:active{
     background-color: #392467;
-
 }
+
+
 .blob1{
     position: absolute;
     left: 0;

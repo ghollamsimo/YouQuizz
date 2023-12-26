@@ -1,36 +1,58 @@
 <?php
-require_once 'mainModel.php';
-class Question extends Crud {
-    private $questionId;
-    private $questionText;
-    private $questionDescription;
-    private $answersArray;
-    public function __set($property, $value)
+require_once '../config/connect.php';
+require_once 'reponseModel.php';
+
+class Question
+{
+    private $db;
+    private $id_question;
+
+    public function __construct()
     {
-        $this->$property = $value; // Fix the typo here
+        $this->db = new DatabaseConection();
     }
 
-    public function __get($property)
+    public function get()
     {
-        return $this->$property;
+        return $this->id_question;
     }
 
-    public function index() {
-        echo "hello world";
+    public function set($id_question)
+    {
+        $this->id_question = $id_question;
     }
 
-    public function __construct(){
-        parent::__construct("question");
-//        $this->tablename = "answers";
-    }
-    public function fetchQuestions(){
-        $row = $this->fetchRandom();
-        $this->questionId = $row["Idquestion"];
-        $this->questionText = $row["Question"];
-    }
-    public function fetchAnswers(){
-        $row = $this->FetchAnswersMain($this->questionId);
-        $this->answersArray = $row;
+    public function selectQuestions()
+    {
+        try {
+            $Question = "SELECT * FROM question ORDER BY RAND()";
+            $querystmt = $this->db->prepare($Question);
+            $querystmt->execute();
+            $questions = $querystmt->fetchAll(PDO::FETCH_ASSOC);
+
+            $formattedQuestions = [];
+            foreach ($questions as $question) {
+                $reponse = new reponseModel();
+                $reponse->set($question['Idquestion']);
+
+                $formattedQuestion = [
+                    'question_text' => $question['Question'],
+                    'Answer' => $reponse->selectResponse()
+                ];
+                $formattedQuestions[] = $formattedQuestion;
+            }
+            return $formattedQuestions;
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
     }
 
+    public function getQuestionsJson()
+    {
+        $formattedQuestions = $this->selectQuestions();
+        return json_encode($formattedQuestions);
+    }
 }
+
+$question = new Question();
+echo $question->getQuestionsJson();
