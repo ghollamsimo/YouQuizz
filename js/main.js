@@ -44,6 +44,7 @@ function showQuestion() {
         button.classList.add("btn");
         answerButton.appendChild(button);
         if (reponse.correct) {
+
             button.dataset.correct = 'true';
         }
 

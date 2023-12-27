@@ -1,3 +1,3 @@
 <?php
 
-require_once './view/layout.php';
+require_once './view/pseudoName.php';
