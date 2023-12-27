@@ -158,3 +158,19 @@ a {
     /*box-shadow: 10px 10px 0px 0px #392467;*/
     background-color: #392467;
 }
+
+@media only screen and (max-width: 600px){
+ .login{
+     flex-direction: column;
+     width: fit-content;
+ }
+    .right{
+        height: 100%;
+    }
+    .inputs{
+        position: fixed;
+    }
+    .blob1{
+        display: none;
+    }
+}

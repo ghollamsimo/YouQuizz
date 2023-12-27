@@ -1,6 +1,7 @@
+const but = document.getElementById('btn')
 function changeBackgroundColor(clickedButton) {
-    clickedButton.style.backgroundColor = "#392467";
-    clickedButton.style.color = 'white';
+    but.style.backgroundColor = "#392467";
+    but.style.color = 'white';
 }
 
 
@@ -22,7 +23,7 @@ window.onload = () => {
         }
     };
 
-    xml.open("GET", "../model/questionModel.php", true);
+    xml.open("POST", "../model/questionModel.php", true);
     xml.send();
 }
 
@@ -48,7 +49,7 @@ function showQuestion() {
 
         button.addEventListener("click", selectReponse);
     });
-    console.log('hhhhhhh', response)
+    console.log('hhhhhhh', )
     console.log("Current Question:", currentQuestion);
 }
 
@@ -82,7 +83,7 @@ function selectReponse(event) {
 
 function showScore() {
     resetState();
-    questionElement.innerHTML = "Score : " + score + " out of " + array.length + " !!";
+    questionElement.innerHTML = "Score : " + score + " 3zwa " + array.length + " !!";
     nextButton.innerHTML = "Play Again";
     nextButton.style.display = 'block';
 }
@@ -114,24 +115,31 @@ function startQuiz() {
 }
 
 
-// var timer;
-// var ele = document.getElementById('timer');
-//
-// (function () {
-//     var sec = 20;
-//     timer = setInterval(() => {
-//         ele.innerHTML = sec;
-//         sec--;
-//         if (sec < 5){
-//             ele.style.color = '#DF2E38'
-//             if (sec < 0) {
-//                 clearInterval(timer);
-//                 // window.location.href = "../model/questionModel.php"
-//             }
-//         }
-//
-//     }, 1000);
-// })();
+var timer;
+var ele = document.getElementById('timer');
+
+(function timer () {
+    var sec = 10;
+    timer = setInterval(() => {
+        ele.innerHTML = sec;
+        sec--;
+
+            if (sec === 0) {
+
+               setTimeout(() => {
+                   if (currentQuestionIndex < array.length) {
+                       sec = 10;
+                       handleNextButton();
+
+                   } else {
+                       startQuiz();
+                   }
+                   clearInterval(timer);
+               },1000);
+            }
+
+    }, 1000);
+})();
 
 
 // var Score
@@ -144,14 +152,19 @@ function startQuiz() {
 // }
 
 const progressBar = {
-    Bar: $('#progress-bar'),
-    Next: function () {
-        const currentActive = $('#progress-bar li.active');
-        currentActive.next('li').addClass('active');
-        currentActive.removeClass('active');
+    Bar: document.getElementById('progress-bar'),
+    Next: function() {
+        const currentActive = document.querySelector('#progress-bar li.active');
+        const nextElement = currentActive.nextElementSibling;
+
+        if (nextElement && nextElement.tagName === 'LI') {
+            nextElement.classList.add('active');
+            currentActive.classList.remove('active');
+        }
     }
 };
 
-$("#Next").on('click', function () {
+document.getElementById('Next').addEventListener('click', function() {
     progressBar.Next();
+    console.log('hhhhhhhh' , progressBar)
 });

@@ -47,9 +47,7 @@ if(empty($_SESSION['NickName'])){
         </div>
     </div>
     <div class="time">
-        <div id="timer">
-            20
-        </div>
+        <div id="timer"></div>
     </div>
 </div>
 <div class="question-section">
@@ -58,7 +56,7 @@ if(empty($_SESSION['NickName'])){
 
         <h1 id="question"></h1>
         <div class="Reponse" id="answer-buttons">
-            <button class="Reponse" type="button" onclick="changeBackgroundColor()"></button>
+            <button class="Reponse" type="button" onclick="changeBackgroundColor(this)"></button>
         </div>
     </div>
 </div>
@@ -70,8 +68,6 @@ if(empty($_SESSION['NickName'])){
 <div class="nextbtn">
     <button id="next-btn">Next</button>
 </div>
-
-
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="
