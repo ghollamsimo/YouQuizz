@@ -42,7 +42,7 @@ class reponseModel{
 
     public function correctResponse() {
         $idQuestion = $this->get();
-        $sql = "SELECT Answer FROM question JOIN answers ON question.Idanswer = question.Idanswer WHERE question.Idquestion = :idquestion";
+        $sql = "SELECT Answer FROM question JOIN answers ON question.Idanswer = answers.Idanswer WHERE question.Idquestion = :idquestion";
         $correctResponseQuery = $this->db->prepare($sql);
         $correctResponseQuery->bindParam(':idquestion', $idQuestion);
         $correctResponseQuery->execute();

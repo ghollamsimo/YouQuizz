@@ -40,7 +40,6 @@
             <h4><span><i class='bx bx-leaf'></i></span>YouQuizz</h4>
             <h1 class="text-3xl">You can Add Nick Name In YouQuizz !</h1>
             <div class="inputs">
-                <form method="post">
                 <form action="" method="post">
                     <input class="input" type="text" name="NickName" placeholder="Enter Your Name "
                            id="exampleInputPassword1">

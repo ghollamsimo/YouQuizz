@@ -47,7 +47,7 @@ if(empty($_SESSION['NickName'])){
         </div>
     </div>
     <div class="time">
-        <div id="timer"></div>
+        <div id="timer">10</div>
     </div>
 </div>
 <div class="question-section">

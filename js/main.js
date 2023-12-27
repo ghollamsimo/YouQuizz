@@ -116,31 +116,31 @@ function startQuiz() {
 }
 
 
-var timer;
-var ele = document.getElementById('timer');
-
-(function timer () {
-    var sec = 10;
-    timer = setInterval(() => {
-        ele.innerHTML = sec;
-        sec--;
-
-            if (sec === 0) {
-
-               setTimeout(() => {
-                   if (currentQuestionIndex < array.length) {
-                       sec = 10;
-                       handleNextButton();
-
-                   } else {
-                       startQuiz();
-                   }
-                   clearInterval(timer);
-               },1000);
-            }
-
-    }, 1000);
-})();
+// var timer;
+// var ele = document.getElementById('timer');
+//
+// (function timer () {
+//     var sec = 10;
+//     timer = setInterval(() => {
+//         ele.innerHTML = sec;
+//         sec--;
+//
+//             if (sec === 0) {
+//
+//                setTimeout(() => {
+//                    if (currentQuestionIndex < array.length) {
+//                        sec = 10;
+//                        handleNextButton();
+//
+//                    } else {
+//                        startQuiz();
+//                    }
+//                    clearInterval(timer);
+//                },1000);
+//             }
+//
+//     }, 1000);
+// })();
 
 
 // var Score
