@@ -13,20 +13,22 @@ if (isset($_POST['out'])){
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>correction</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-<!--    <link rel='stylesheet' type='text/css' media='screen' href='../assets/css/quiz.css'>-->
+    <link rel='stylesheet' href='../css/correction.css?v=<?php echo time(); ?>'>
 </head>
 <body>
 <div class="app">
-    <h1 class="bienvenue">Here is a Review, <?php echo $_SESSION['NickName']; ?> !</h1>
+    <h1 class="bienvenue question">Here is a Review, <?php echo $_SESSION['NickName']; ?> !</h1>
+    <form action="" method="post" >
+        <button id="logout" name="out" class="">Logout</button>
+    </form>
+</div>
     <div class="quiz">
         <h2 id="questionE"></h2>
         <div id="answerE"></div>
         <p id="explication" ></p>
-        <form action="" method="post" >
-            <button id="logout" name="out" >Logout</button>
-        </form>
+
     </div>
-</div>
+<!--</div>-->
 <script src="../js/main.js" ></script>
 
 </body>

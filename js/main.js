@@ -15,10 +15,12 @@ function changeBackgroundColor(clickedButton) {
     but.style.color = 'white';
 }
 
-
+const explication = document.getElementById("explication");
 const questionElement = document.getElementById("question");
 const answerButton = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
+const correction =document.getElementById('correction');
+const title =document.querySelector('.bienvenue')
 
 let array = [];
 let currentQuestionIndex = 0;
@@ -106,7 +108,7 @@ function selectReponse(event) {
 function showScore() {
     resetState();
     questionElement.innerHTML = "Score  : " + score + " Out Of " + array.length + " !! Or";
-    // window.location.href = 'http://localhost/Quiz/view/correction.php'
+    window.location.href = 'http://localhost/Quiz/view/correction.php'
     nextButton.innerHTML = "Play Again";
     nextButton.style.display = 'block';
 }
@@ -163,6 +165,8 @@ function startQuiz() {
 //
 //     }, 1000);
 // })();
+
+
 
 
 const progressBar = {
