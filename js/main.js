@@ -1,3 +1,14 @@
+
+// var Score
+
+// function changeScore(){
+//     var yourscore = 100
+//     for (var i = 0 ; i < Score ; i++){
+//         if (scorechanged == )
+//     }
+// }
+
+
 const but = document.getElementById('btn')
 function changeBackgroundColor(clickedButton) {
     but.style.backgroundColor = "#392467";
@@ -29,30 +40,37 @@ window.onload = () => {
 
 function showQuestion() {
     resetState();
+
     let currentQuestion = array[currentQuestionIndex];
-    let questionNo = currentQuestionIndex + 1;
-    questionElement.innerHTML = questionNo + ". " + currentQuestion.question_text;
 
-    // Supprimer tous les écouteurs d'événements existants
-    Array.from(answerButton.children).forEach(button => {
-        button.removeEventListener("click", selectReponse);
-    });
+    if (currentQuestion) {
+        let questionNo = currentQuestionIndex + 1;
+        questionElement.innerHTML = questionNo + ". " + currentQuestion.explication;
 
-    currentQuestion.Answer.forEach(reponse => {
-        const button = document.createElement("button");
-        button.innerText = reponse.Answer;
-        button.classList.add("btn");
-        answerButton.appendChild(button);
-        if (reponse.correct) {
+        Array.from(answerButton.children).forEach(button => {
+            button.removeEventListener("click", selectReponse);
+        });
 
-            button.dataset.correct = 'true';
-        }
+        currentQuestion.Answer.forEach(reponse => {
+            const button = document.createElement("button");
+            button.innerText = reponse.Answer;
+            button.classList.add("btn");
+            answerButton.appendChild(button);
+            console.log(reponse)
+            if (reponse.explication !== false) {
+                button.dataset.correct = "true";
+            }
 
-        button.addEventListener("click", selectReponse);
-    });
-    console.log('hhhhhhh', )
-    console.log("Current Question:", currentQuestion);
+            button.addEventListener("click", selectReponse);
+        });
+    } else {
+        // Handle the case when currentQuestion is undefined (e.g., show an error message)
+        console.error("Current question is undefined.");
+    }
+
+    // console.log("Current Question:", currentQuestion);
 }
+
 
 function resetState() {
     nextButton.style.display = 'none';
@@ -66,9 +84,12 @@ function selectReponse(event) {
     const isCorrect = selectedButton.dataset.correct === 'true';
 
     if (isCorrect) {
+        console.log("correct: ", isCorrect)
         selectedButton.classList.add("correct");
         score++;
+        document.querySelector("#score").innerText = score;
     } else {
+        console.log("error: ")
         selectedButton.classList.add("incorrect");
     }
 
@@ -81,10 +102,11 @@ function selectReponse(event) {
 
     nextButton.style.display = 'block';
 }
-
+// const aaa = document.getElementById('')
 function showScore() {
     resetState();
-    questionElement.innerHTML = "Score : " + score + " 3zwa " + array.length + " !!";
+    questionElement.innerHTML = "Score  : " + score + " Out Of " + array.length + " !! Or";
+    // window.location.href = 'http://localhost/Quiz/view/correction.php'
     nextButton.innerHTML = "Play Again";
     nextButton.style.display = 'block';
 }
@@ -97,10 +119,10 @@ function handleNextButton() {
         showScore();
     }
 }
-
 nextButton.addEventListener("click", () => {
     if (currentQuestionIndex < array.length) {
         handleNextButton();
+        progressBar.Next();
     } else {
         startQuiz();
     }
@@ -143,15 +165,6 @@ function startQuiz() {
 // })();
 
 
-// var Score
-// var scorechanged = document.getElementById('score')
-// function changeScore(){
-//     var yourscore = 100
-//     for (var i = 0 ; i < Score ; i++){
-//         if (scorechanged == )
-//     }
-// }
-
 const progressBar = {
     Bar: document.getElementById('progress-bar'),
     Next: function() {
@@ -164,8 +177,3 @@ const progressBar = {
         }
     }
 };
-
-document.getElementById('Next').addEventListener('click', function() {
-    progressBar.Next();
-    console.log('hhhhhhhh' , progressBar)
-});

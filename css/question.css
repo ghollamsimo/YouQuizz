@@ -50,17 +50,17 @@
 }
 .question h1{
     margin: 70px;
+    /*width:  50rem;*/
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bolder;
     font-size: 1.5rem;
-    padding: 1.5rem;
+    padding: 1rem 5rem;
     background: #5D3587;
     box-shadow: 10px 10px 0px 0px #392467;
     border-radius: 5px;
     color: #ffffff;
-
 }
 .Reponse{
     display: grid;

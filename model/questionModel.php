@@ -36,7 +36,7 @@ class Question
                 $reponse->set($question['Idquestion']);
 
                 $formattedQuestion = [
-                    'question_text' => $question['Question'],
+                    'explication' => $question['Question'],
                     'Answer' => $reponse->selectResponse()
                 ];
                 $formattedQuestions[] = $formattedQuestion;

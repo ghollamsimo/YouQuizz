@@ -14,7 +14,6 @@ class reponseModel{
         return $this->id_question;
     }
 
-
     public function set($id_question) {
         $this->id_question = $id_question;
     }
@@ -27,12 +26,11 @@ class reponseModel{
         $querystmt->bindParam(':id_question', $idQuestion);
         $querystmt->execute();
         $responses = $querystmt->fetchAll(PDO::FETCH_ASSOC);
-
         $formattedResponses = [];
         foreach ($responses as $response) {
             $formattedResponses[] = [
                 'Answer' => $response['Answer'],
-                'correct' => $response['Answer'] == $correctResponse,
+                'explication' => $response['Answer'] === $correctResponse ? $response['Answer'] : false,
             ];
         }
 
@@ -42,7 +40,7 @@ class reponseModel{
 
     public function correctResponse() {
         $idQuestion = $this->get();
-        $sql = "SELECT Answer FROM question JOIN answers ON question.Idanswer = answers.Idanswer WHERE question.Idquestion = :idquestion";
+        $sql = "SELECT Answer FROM answers WHERE answers.isCorrect = 1 AND answers.Idquestion = :idquestion";
         $correctResponseQuery = $this->db->prepare($sql);
         $correctResponseQuery->bindParam(':idquestion', $idQuestion);
         $correctResponseQuery->execute();
